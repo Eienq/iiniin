@@ -213,3 +213,8 @@ client.on("guildMemberAdd", async member => {
     }
   });
 });
+
+client.on("ready", () => {
+  client.channels.cache.get("843551683563749377").join();
+   //main dosyaya atılacak
+})
