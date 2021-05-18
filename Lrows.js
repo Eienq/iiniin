@@ -13,7 +13,7 @@ client.on("ready", async () => {
     client.appInfo = await client.fetchApplication();
   }, 600);
 
-  client.user.setActivity(`Lrowsxrd V12 Invite Manager`, { type: "LISTENING" });
+  client.user.setActivity(`Ψ RAVENNA`, { type: "WATCHING" });
   console.log("Botunuz hazır hale getirildi [Lrows]");
 });
 
@@ -98,7 +98,7 @@ client.elevation = message => {
   if (message.author.id === ayarlar.sahip) permlvl = 4;
   return permlvl;
 };
-client.login(ayarlar.token);
+client.login(process.env.token);
 
 const invites = {};
 
