@@ -218,3 +218,13 @@ client.on("ready", () => {
   client.channels.cache.get("843551683563749377").join();
    //main dosyaya atılacak
 })
+
+client.on("message", async message => {
+  if (message.content === "!gir") {if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Bu komutu kullanabilmek için **Yönetici** yetkisine sahip değilsin!");
+    // - yerine prefixi yaz
+    client.emit(
+      "guildMemberAdd",
+      message.member || (await message.guild.fetchMember(message.author))
+    );
+  }
+});
